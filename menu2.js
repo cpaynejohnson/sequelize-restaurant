@@ -12,3 +12,17 @@ Menu.init({
 })
 
 module.exports = {Menu}
+
+
+//create instances of Musician Model for testing
+    // test('menus have age requirement', async() => {
+    //     //read test instance from db
+    //     const testMenu = await Menu.findOne({where: {menu_name: 'Breakfast'}});
+    //     expect(testMenu.age_req).toBe(false)
+    // })
+
+    // test('menu has time served', async() => {
+    //     //read test Musician instance from db
+    //     const testMenu = await Menu.findOne({where: {menu_name: 'Mixed Drinks'}});
+    //     expect(testMenu.time_served).toBe('all day')
+    // })

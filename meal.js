@@ -1,11 +1,6 @@
 const {sequelize, DataTypes, Model} = require('./db')
 
-//create model for musicians in our database
-class Meal extends Model {
-    //add custom query methods here
-}
-
-//create attributes for model using init method
+class Meal extends Model {}
 Meal.init({
     breakfast_menu: DataTypes.STRING,
     lunch_menu: DataTypes.STRING,

@@ -2,7 +2,7 @@ const {sequelize, DataTypes, Model} = require('./db')
 
 class Menu extends Model {}
 
-MenuItem.init({
+Menu.init({
     food_name: DataTypes.STRING,
     chef_id: DataTypes.INTEGER,
     price: DataTypes.INTEGER

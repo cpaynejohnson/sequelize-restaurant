@@ -6,8 +6,7 @@ const { Customer } = require('./customer')
 const { Chef } = require('./chef')
 const { Waiter } = require('./waiter')
 
-//associate models
-//adds foreign key to musician table connecting a menu item instance to a specific menu
+//adds foreign keys to connect associated models
 Menu.belongsTo(Meal)
 Customer.belongsTo(Waiter)
 Menu.belongsTo(Chef)
