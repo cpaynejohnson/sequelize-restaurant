@@ -1,6 +1,6 @@
 const {sequelize, DataTypes, Model} = require('./db')
 
-class MenuItem extends Model {}
+class Menu extends Model {}
 
 MenuItem.init({
     food_name: DataTypes.STRING,
@@ -11,4 +11,4 @@ MenuItem.init({
     timestamps: false
 })
 
-module.exports = {MenuItem}
+module.exports = {Menu}

@@ -1,9 +1,8 @@
 //import the associated models from associations.js
-const {Menu, MenuItem} = require('./associations')
+const {Menu, Meal} = require('./associations')
 const {sequelize} = require('./db')
 //test menu item database CRUD
 describe('Menu Item Database', () => {
-
     beforeAll(async() => {
         //reset database
         await sequelize.sync({force:true})
@@ -18,21 +17,21 @@ describe('Menu Item Database', () => {
             {food_name: 'Steak', chef_id: '4', price: 8},
             {food_name: 'Martini', chef_id: '1', price: 5}
         ]
-        //create array of menus
-        const arrayOfMenus =[
-            {menu_name: 'Breakfast', time_served: 'morning', age_req: false},
-            {menu_name: 'Lunch', time_served: 'afternoon', age_req: false},
-            {menu_name: 'Dinner', time_served: 'evening', age_req: false},
-            {menu_name: 'Dessert', time_served: 'all day', age_req: false},
-            {menu_name: 'Mixed Drinks', time_served: 'all day', age_req: true}
-            {menu_name: 'Kids Menu', time_served: 'all day', age_req: true}
-        ]
+        //create array of meals
+        // const arrayOfMenus =[
+        //     {menu_name: 'Breakfast', time_served: 'morning', age_req: false},
+        //     {menu_name: 'Lunch', time_served: 'afternoon', age_req: false},
+        //     {menu_name: 'Dinner', time_served: 'evening', age_req: false},
+        //     {menu_name: 'Dessert', time_served: 'all day', age_req: false},
+        //     {menu_name: 'Mixed Drinks', time_served: 'all day', age_req: true}
+        //     {menu_name: 'Kids Menu', time_served: 'all day', age_req: true}
+        // ]
         //add arrays to database
         await Menu.bulkCreate(arrayOfMenus)
-        await MenuItem.bulkCreate(arrayOfMenuItems)
+        await Meal.bulkCreate(arrayOfMeals)
     })
 
-    //create instances of Musician Model for testin
+    //create instances of Musician Model for testing
     test('menus have age requirement', async() => {
         //read test instance from db
         const testMenu = await Menu.findOne({where: {menu_name: 'Breakfast'}});

@@ -4,8 +4,8 @@ class Waiter extends Model {}
 
 Waiter.init(
   {
-    name: waiter_name.STRING,
-    salary: waiter_salary.INTEGER,
+    waiter_name: DataTypes.STRING,
+    waiter_salary: DataTypes.INTEGER,
   },
   {
     sequelize,
